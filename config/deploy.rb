@@ -2,8 +2,8 @@
 lock "~> 3.14.1"
 
 set :application, "Hello"
-set :repo_url, "https://github.com/snehaannadurai21/hello2.git"
 
+set :repo_url, "https://github.com/snehaannadurai21/hello3.git"
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/Hello"
 set :branch, 'main'
@@ -24,18 +24,7 @@ set :rbenv_ruby, '2.7.5'
 
 set :rbenv_map_bins, %w{rake gem bundle ruby rails puma pumactl}
 set :rbenv_roles, :all
-# Add the following line to your deploy.rb
-before 'deploy:assets:precompile', 'deploy:bundle_install'
-
-namespace :deploy do
-  task :bundle_install do
-    on roles(:app) do
-      within release_path do
-        execute :bundle, 'install --without development test'
-      end
-    end
-  end
-end
+ 83ebd2a (Add rake gem to Gemfile)
 
 
 namespace :puma do
