@@ -3571,3 +3571,786 @@ platform is x86_64-linux. Add the current platform to the lockfile with
  DEBUG [1661e422] 	Your bundle only supports platforms ["x86_64-linux-musl"] but your local
 platform is x86_64-linux. Add the current platform to the lockfile with `bundle
 lock --add-platform x86_64-linux` and try again.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-12-15 09:08:40 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [d477b8ea] Running [ -d $HOME/.rbenv/versions/2.7.5 ] as deploy@13.127.124.45
+ DEBUG [d477b8ea] Command: [ -d $HOME/.rbenv/versions/2.7.5 ]
+ DEBUG [d477b8ea] Finished in 1.018 seconds with exit status 0 (successful).
+  INFO [4d40fd00] Running /usr/bin/env sudo service puma restart as deploy@13.127.124.45
+ DEBUG [4d40fd00] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env sudo service puma restart )
+  INFO [4d40fd00] Finished in 0.149 seconds with exit status 0 (successful).
+  INFO [fbc993aa] Running /usr/bin/env mkdir -p /tmp as deploy@13.127.124.45
+ DEBUG [fbc993aa] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /tmp )
+  INFO [fbc993aa] Finished in 0.088 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Hello-production-.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Hello-production-.sh 100.0%
+  INFO [60a26c94] Running /usr/bin/env chmod 700 /tmp/git-ssh-Hello-production-.sh as deploy@13.127.124.45
+ DEBUG [60a26c94] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env chmod 700 /tmp/git-ssh-Hello-production-.sh )
+  INFO [60a26c94] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO [3d1e0626] Running /usr/bin/env git ls-remote https://github.com/snehaannadurai21/hello3.git HEAD as deploy@13.127.124.45
+ DEBUG [3d1e0626] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git ls-remote https://github.com/snehaannadurai21/hello3.git HEAD )
+ DEBUG [3d1e0626] 	e4b46538d4efe97753684ab712ffa44217cb0ce4	HEAD
+  INFO [3d1e0626] Finished in 0.709 seconds with exit status 0 (successful).
+  INFO [39e009a5] Running /usr/bin/env mkdir -p /home/deploy/Hello/shared /home/deploy/Hello/releases as deploy@13.127.124.45
+ DEBUG [39e009a5] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /home/deploy/Hello/shared /home/deploy/Hello/releases )
+  INFO [39e009a5] Finished in 0.088 seconds with exit status 0 (successful).
+  INFO [be50d7b6] Running /usr/bin/env mkdir -p /home/deploy/Hello/shared/log /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/shared/.bundle /home/deploy/Hello/shared/public/system /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/shared/public/assets as deploy@13.127.124.45
+ DEBUG [be50d7b6] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /home/deploy/Hello/shared/log /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/shared/.bundle /home/deploy/Hello/shared/public/system /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/shared/public/assets )
+  INFO [be50d7b6] Finished in 0.089 seconds with exit status 0 (successful).
+ DEBUG [92255b70] Running [ -f /home/deploy/Hello/shared/puma.rb ] as deploy@13.127.124.45
+ DEBUG [92255b70] Command: [ -f /home/deploy/Hello/shared/puma.rb ]
+ DEBUG [92255b70] Finished in 0.085 seconds with exit status 0 (successful).
+ DEBUG [99ac9443] Running [ -f /home/deploy/Hello/current/REVISION ] as deploy@13.127.124.45
+ DEBUG [99ac9443] Command: [ -f /home/deploy/Hello/current/REVISION ]
+ DEBUG [99ac9443] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [97cf9bde] Running /usr/bin/env cat /home/deploy/Hello/current/REVISION 2>/dev/null as deploy@13.127.124.45
+ DEBUG [97cf9bde] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env cat /home/deploy/Hello/current/REVISION 2>/dev/null )
+ DEBUG [97cf9bde] 	906fdd15cc7b3d67f1fd0e7aed715509e56b3927
+ DEBUG [97cf9bde] Finished in 0.087 seconds with exit status 0 (successful).
+ DEBUG [3e4528d5] Running [ -f /home/deploy/Hello/repo/HEAD ] as deploy@13.127.124.45
+ DEBUG [3e4528d5] Command: [ -f /home/deploy/Hello/repo/HEAD ]
+ DEBUG [3e4528d5] Finished in 0.084 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/Hello/repo
+ DEBUG [33f6b7bf] Running if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [33f6b7bf] Command: if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi
+ DEBUG [33f6b7bf] Finished in 0.084 seconds with exit status 0 (successful).
+  INFO [eb69e3d0] Running /usr/bin/env git remote set-url origin https://github.com/snehaannadurai21/hello3.git as deploy@13.127.124.45
+ DEBUG [eb69e3d0] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git remote set-url origin https://github.com/snehaannadurai21/hello3.git )
+  INFO [eb69e3d0] Finished in 0.098 seconds with exit status 0 (successful).
+  INFO [85ce6b44] Running /usr/bin/env git remote update --prune as deploy@13.127.124.45
+ DEBUG [85ce6b44] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [85ce6b44] 	Fetching origin
+ DEBUG [85ce6b44] 	From https://github.com/snehaannadurai21/hello3
+   38734c4..e4b4653  main       -> main
+  INFO [85ce6b44] Finished in 0.908 seconds with exit status 0 (successful).
+ DEBUG [55b67022] Running if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [55b67022] Command: if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi
+ DEBUG [55b67022] Finished in 0.085 seconds with exit status 0 (successful).
+  INFO [dcddf051] Running /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215090843 as deploy@13.127.124.45
+ DEBUG [dcddf051] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215090843 )
+  INFO [dcddf051] Finished in 0.089 seconds with exit status 0 (successful).
+  INFO [8dfba4b4] Running /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/Hello/releases/20231215090843 as deploy@13.127.124.45
+ DEBUG [8dfba4b4] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/Hello/releases/20231215090843 )
+  INFO [8dfba4b4] Finished in 1.144 seconds with exit status 0 (successful).
+ DEBUG [b532f95d] Running if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [b532f95d] Command: if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi
+ DEBUG [b532f95d] Finished in 0.087 seconds with exit status 0 (successful).
+ DEBUG [77fefe90] Running /usr/bin/env git rev-list --max-count=1 main as deploy@13.127.124.45
+ DEBUG [77fefe90] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git rev-list --max-count=1 main )
+ DEBUG [77fefe90] 	e4b46538d4efe97753684ab712ffa44217cb0ce4
+ DEBUG [77fefe90] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [3d353b00] Running if test ! -d /home/deploy/Hello/releases/20231215090843; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215090843'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [3d353b00] Command: if test ! -d /home/deploy/Hello/releases/20231215090843; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215090843'" 1>&2; false; fi
+ DEBUG [3d353b00] Finished in 0.084 seconds with exit status 0 (successful).
+  INFO [853aee34] Running /usr/bin/env echo "e4b46538d4efe97753684ab712ffa44217cb0ce4" > REVISION as deploy@13.127.124.45
+ DEBUG [853aee34] Command: cd /home/deploy/Hello/releases/20231215090843 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env echo "e4b46538d4efe97753684ab712ffa44217cb0ce4" > REVISION )
+  INFO [853aee34] Finished in 0.088 seconds with exit status 0 (successful).
+  INFO [4d12e6b1] Running /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215090843 /home/deploy/Hello/releases/20231215090843/tmp /home/deploy/Hello/releases/20231215090843/vendor /home/deploy/Hello/releases/20231215090843/public as deploy@13.127.124.45
+ DEBUG [4d12e6b1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215090843 /home/deploy/Hello/releases/20231215090843/tmp /home/deploy/Hello/releases/20231215090843/vendor /home/deploy/Hello/releases/20231215090843/public )
+  INFO [4d12e6b1] Finished in 0.089 seconds with exit status 0 (successful).
+ DEBUG [869dfe68] Running [ -L /home/deploy/Hello/releases/20231215090843/log ] as deploy@13.127.124.45
+ DEBUG [869dfe68] Command: [ -L /home/deploy/Hello/releases/20231215090843/log ]
+ DEBUG [869dfe68] Finished in 0.083 seconds with exit status 1 (failed).
+ DEBUG [7b5a392c] Running [ -d /home/deploy/Hello/releases/20231215090843/log ] as deploy@13.127.124.45
+ DEBUG [7b5a392c] Command: [ -d /home/deploy/Hello/releases/20231215090843/log ]
+ DEBUG [7b5a392c] Finished in 0.084 seconds with exit status 0 (successful).
+  INFO [ea18b9cd] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215090843/log as deploy@13.127.124.45
+ DEBUG [ea18b9cd] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215090843/log )
+  INFO [ea18b9cd] Finished in 0.086 seconds with exit status 0 (successful).
+  INFO [8b3256a0] Running /usr/bin/env ln -s /home/deploy/Hello/shared/log /home/deploy/Hello/releases/20231215090843/log as deploy@13.127.124.45
+ DEBUG [8b3256a0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/log /home/deploy/Hello/releases/20231215090843/log )
+  INFO [8b3256a0] Finished in 0.090 seconds with exit status 0 (successful).
+ DEBUG [b7ea9417] Running [ -L /home/deploy/Hello/releases/20231215090843/tmp/pids ] as deploy@13.127.124.45
+ DEBUG [b7ea9417] Command: [ -L /home/deploy/Hello/releases/20231215090843/tmp/pids ]
+ DEBUG [b7ea9417] Finished in 0.085 seconds with exit status 1 (failed).
+ DEBUG [ee38e5a0] Running [ -d /home/deploy/Hello/releases/20231215090843/tmp/pids ] as deploy@13.127.124.45
+ DEBUG [ee38e5a0] Command: [ -d /home/deploy/Hello/releases/20231215090843/tmp/pids ]
+ DEBUG [ee38e5a0] Finished in 0.082 seconds with exit status 0 (successful).
+  INFO [370d51a6] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215090843/tmp/pids as deploy@13.127.124.45
+ DEBUG [370d51a6] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215090843/tmp/pids )
+  INFO [370d51a6] Finished in 0.085 seconds with exit status 0 (successful).
+  INFO [80457eb3] Running /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/releases/20231215090843/tmp/pids as deploy@13.127.124.45
+ DEBUG [80457eb3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/releases/20231215090843/tmp/pids )
+  INFO [80457eb3] Finished in 0.088 seconds with exit status 0 (successful).
+ DEBUG [397ac718] Running [ -L /home/deploy/Hello/releases/20231215090843/tmp/cache ] as deploy@13.127.124.45
+ DEBUG [397ac718] Command: [ -L /home/deploy/Hello/releases/20231215090843/tmp/cache ]
+ DEBUG [397ac718] Finished in 0.083 seconds with exit status 1 (failed).
+ DEBUG [9a18e21d] Running [ -d /home/deploy/Hello/releases/20231215090843/tmp/cache ] as deploy@13.127.124.45
+ DEBUG [9a18e21d] Command: [ -d /home/deploy/Hello/releases/20231215090843/tmp/cache ]
+ DEBUG [9a18e21d] Finished in 0.085 seconds with exit status 0 (successful).
+  INFO [16c2a809] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215090843/tmp/cache as deploy@13.127.124.45
+ DEBUG [16c2a809] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215090843/tmp/cache )
+  INFO [16c2a809] Finished in 0.149 seconds with exit status 0 (successful).
+  INFO [5f9ccb72] Running /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/releases/20231215090843/tmp/cache as deploy@13.127.124.45
+ DEBUG [5f9ccb72] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/releases/20231215090843/tmp/cache )
+  INFO [5f9ccb72] Finished in 0.087 seconds with exit status 0 (successful).
+ DEBUG [3e83af54] Running [ -L /home/deploy/Hello/releases/20231215090843/tmp/sockets ] as deploy@13.127.124.45
+ DEBUG [3e83af54] Command: [ -L /home/deploy/Hello/releases/20231215090843/tmp/sockets ]
+ DEBUG [3e83af54] Finished in 0.090 seconds with exit status 1 (failed).
+ DEBUG [ca5225f8] Running [ -d /home/deploy/Hello/releases/20231215090843/tmp/sockets ] as deploy@13.127.124.45
+ DEBUG [ca5225f8] Command: [ -d /home/deploy/Hello/releases/20231215090843/tmp/sockets ]
+ DEBUG [ca5225f8] Finished in 0.084 seconds with exit status 1 (failed).
+  INFO [f5fdbb2e] Running /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/releases/20231215090843/tmp/sockets as deploy@13.127.124.45
+ DEBUG [f5fdbb2e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/releases/20231215090843/tmp/sockets )
+  INFO [f5fdbb2e] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [207f8cf0] Running [ -L /home/deploy/Hello/releases/20231215090843/vendor/bundle ] as deploy@13.127.124.45
+ DEBUG [207f8cf0] Command: [ -L /home/deploy/Hello/releases/20231215090843/vendor/bundle ]
+ DEBUG [207f8cf0] Finished in 0.084 seconds with exit status 1 (failed).
+ DEBUG [453ee44c] Running [ -d /home/deploy/Hello/releases/20231215090843/vendor/bundle ] as deploy@13.127.124.45
+ DEBUG [453ee44c] Command: [ -d /home/deploy/Hello/releases/20231215090843/vendor/bundle ]
+ DEBUG [453ee44c] Finished in 0.085 seconds with exit status 0 (successful).
+  INFO [c3efd80b] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215090843/vendor/bundle as deploy@13.127.124.45
+ DEBUG [c3efd80b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215090843/vendor/bundle )
+  INFO [c3efd80b] Finished in 0.216 seconds with exit status 0 (successful).
+  INFO [403d7322] Running /usr/bin/env ln -s /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/releases/20231215090843/vendor/bundle as deploy@13.127.124.45
+ DEBUG [403d7322] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/releases/20231215090843/vendor/bundle )
+  INFO [403d7322] Finished in 0.101 seconds with exit status 0 (successful).
+ DEBUG [25eba0bf] Running [ -L /home/deploy/Hello/releases/20231215090843/.bundle ] as deploy@13.127.124.45
+ DEBUG [25eba0bf] Command: [ -L /home/deploy/Hello/releases/20231215090843/.bundle ]
+ DEBUG [25eba0bf] Finished in 0.084 seconds with exit status 1 (failed).
+ DEBUG [52356041] Running [ -d /home/deploy/Hello/releases/20231215090843/.bundle ] as deploy@13.127.124.45
+ DEBUG [52356041] Command: [ -d /home/deploy/Hello/releases/20231215090843/.bundle ]
+ DEBUG [52356041] Finished in 0.085 seconds with exit status 1 (failed).
+  INFO [cee1a6f8] Running /usr/bin/env ln -s /home/deploy/Hello/shared/.bundle /home/deploy/Hello/releases/20231215090843/.bundle as deploy@13.127.124.45
+ DEBUG [cee1a6f8] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/.bundle /home/deploy/Hello/releases/20231215090843/.bundle )
+  INFO [cee1a6f8] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [c8a78ff2] Running [ -L /home/deploy/Hello/releases/20231215090843/public/system ] as deploy@13.127.124.45
+ DEBUG [c8a78ff2] Command: [ -L /home/deploy/Hello/releases/20231215090843/public/system ]
+ DEBUG [c8a78ff2] Finished in 0.084 seconds with exit status 1 (failed).
+ DEBUG [2164795c] Running [ -d /home/deploy/Hello/releases/20231215090843/public/system ] as deploy@13.127.124.45
+ DEBUG [2164795c] Command: [ -d /home/deploy/Hello/releases/20231215090843/public/system ]
+ DEBUG [2164795c] Finished in 0.083 seconds with exit status 1 (failed).
+  INFO [dd4678c9] Running /usr/bin/env ln -s /home/deploy/Hello/shared/public/system /home/deploy/Hello/releases/20231215090843/public/system as deploy@13.127.124.45
+ DEBUG [dd4678c9] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/public/system /home/deploy/Hello/releases/20231215090843/public/system )
+  INFO [dd4678c9] Finished in 0.087 seconds with exit status 0 (successful).
+ DEBUG [35ab0693] Running [ -L /home/deploy/Hello/releases/20231215090843/public/uploads ] as deploy@13.127.124.45
+ DEBUG [35ab0693] Command: [ -L /home/deploy/Hello/releases/20231215090843/public/uploads ]
+ DEBUG [35ab0693] Finished in 0.083 seconds with exit status 1 (failed).
+ DEBUG [01585101] Running [ -d /home/deploy/Hello/releases/20231215090843/public/uploads ] as deploy@13.127.124.45
+ DEBUG [01585101] Command: [ -d /home/deploy/Hello/releases/20231215090843/public/uploads ]
+ DEBUG [01585101] Finished in 0.084 seconds with exit status 1 (failed).
+  INFO [0f60cdd5] Running /usr/bin/env ln -s /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/releases/20231215090843/public/uploads as deploy@13.127.124.45
+ DEBUG [0f60cdd5] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/releases/20231215090843/public/uploads )
+  INFO [0f60cdd5] Finished in 0.086 seconds with exit status 0 (successful).
+ DEBUG [b7fe2d30] Running [ -L /home/deploy/Hello/releases/20231215090843/public/assets ] as deploy@13.127.124.45
+ DEBUG [b7fe2d30] Command: [ -L /home/deploy/Hello/releases/20231215090843/public/assets ]
+ DEBUG [b7fe2d30] Finished in 0.082 seconds with exit status 1 (failed).
+ DEBUG [7e0e3ee0] Running [ -d /home/deploy/Hello/releases/20231215090843/public/assets ] as deploy@13.127.124.45
+ DEBUG [7e0e3ee0] Command: [ -d /home/deploy/Hello/releases/20231215090843/public/assets ]
+ DEBUG [7e0e3ee0] Finished in 0.085 seconds with exit status 1 (failed).
+  INFO [661e04e0] Running /usr/bin/env ln -s /home/deploy/Hello/shared/public/assets /home/deploy/Hello/releases/20231215090843/public/assets as deploy@13.127.124.45
+ DEBUG [661e04e0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/public/assets /home/deploy/Hello/releases/20231215090843/public/assets )
+  INFO [661e04e0] Finished in 0.085 seconds with exit status 0 (successful).
+ DEBUG [e9aa511e] Running if test ! -d /home/deploy/Hello/releases/20231215090843; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215090843'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [e9aa511e] Command: if test ! -d /home/deploy/Hello/releases/20231215090843; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215090843'" 1>&2; false; fi
+ DEBUG [e9aa511e] Finished in 0.084 seconds with exit status 0 (successful).
+  INFO [10e58846] Running $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true as deploy@13.127.124.45
+ DEBUG [10e58846] Command: cd /home/deploy/Hello/releases/20231215090843 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true )
+  INFO [10e58846] Finished in 0.477 seconds with exit status 0 (successful).
+  INFO [77f25029] Running $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/Hello/shared/bundle as deploy@13.127.124.45
+ DEBUG [77f25029] Command: cd /home/deploy/Hello/releases/20231215090843 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/Hello/shared/bundle )
+  INFO [77f25029] Finished in 0.538 seconds with exit status 0 (successful).
+  INFO [f1b6b390] Running $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test as deploy@13.127.124.45
+ DEBUG [f1b6b390] Command: cd /home/deploy/Hello/releases/20231215090843 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test )
+  INFO [f1b6b390] Finished in 0.508 seconds with exit status 0 (successful).
+ DEBUG [97f1b1a6] Running if test ! -d /home/deploy/Hello/releases/20231215090843; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215090843'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [97f1b1a6] Command: if test ! -d /home/deploy/Hello/releases/20231215090843; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215090843'" 1>&2; false; fi
+ DEBUG [97f1b1a6] Finished in 0.082 seconds with exit status 0 (successful).
+ DEBUG [06ac5b40] Running $HOME/.rbenv/bin/rbenv exec bundle check as deploy@13.127.124.45
+ DEBUG [06ac5b40] Command: cd /home/deploy/Hello/releases/20231215090843 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle check )
+ DEBUG [06ac5b40] 	Your bundle only supports platforms ["x86_64-linux-musl"] but your local
+platform is x86_64-linux. Add the current platform to the lockfile with `bundle
+lock --add-platform x86_64-linux` and try again.
+ DEBUG [06ac5b40] Finished in 0.526 seconds with exit status 16 (failed).
+  INFO [84b8886e] Running $HOME/.rbenv/bin/rbenv exec bundle install --jobs 4 --quiet as deploy@13.127.124.45
+ DEBUG [84b8886e] Command: cd /home/deploy/Hello/releases/20231215090843 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle install --jobs 4 --quiet )
+ DEBUG [84b8886e] 	Your bundle only supports platforms ["x86_64-linux-musl"] but your local
+platform is x86_64-linux. Add the current platform to the lockfile with `bundle
+lock --add-platform x86_64-linux` and try again.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-12-15 09:36:15 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [f8e98cd1] Running [ -d $HOME/.rbenv/versions/2.7.5 ] as deploy@13.127.124.45
+ DEBUG [f8e98cd1] Command: [ -d $HOME/.rbenv/versions/2.7.5 ]
+ DEBUG [f8e98cd1] Finished in 0.995 seconds with exit status 0 (successful).
+  INFO [1eeb1ed7] Running /usr/bin/env sudo service puma restart as deploy@13.127.124.45
+ DEBUG [1eeb1ed7] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env sudo service puma restart )
+  INFO [1eeb1ed7] Finished in 0.102 seconds with exit status 0 (successful).
+  INFO [ed49131d] Running /usr/bin/env mkdir -p /tmp as deploy@13.127.124.45
+ DEBUG [ed49131d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /tmp )
+  INFO [ed49131d] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Hello-production-.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Hello-production-.sh 100.0%
+  INFO [05e3e0da] Running /usr/bin/env chmod 700 /tmp/git-ssh-Hello-production-.sh as deploy@13.127.124.45
+ DEBUG [05e3e0da] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env chmod 700 /tmp/git-ssh-Hello-production-.sh )
+  INFO [05e3e0da] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO [597a4b77] Running /usr/bin/env git ls-remote https://github.com/snehaannadurai21/hello3.git HEAD as deploy@13.127.124.45
+ DEBUG [597a4b77] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git ls-remote https://github.com/snehaannadurai21/hello3.git HEAD )
+ DEBUG [597a4b77] 	e4b46538d4efe97753684ab712ffa44217cb0ce4	HEAD
+  INFO [597a4b77] Finished in 0.601 seconds with exit status 0 (successful).
+  INFO [ea016569] Running /usr/bin/env mkdir -p /home/deploy/Hello/shared /home/deploy/Hello/releases as deploy@13.127.124.45
+ DEBUG [ea016569] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /home/deploy/Hello/shared /home/deploy/Hello/releases )
+  INFO [ea016569] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [a2783705] Running /usr/bin/env mkdir -p /home/deploy/Hello/shared/log /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/shared/.bundle /home/deploy/Hello/shared/public/system /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/shared/public/assets as deploy@13.127.124.45
+ DEBUG [a2783705] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /home/deploy/Hello/shared/log /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/shared/.bundle /home/deploy/Hello/shared/public/system /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/shared/public/assets )
+  INFO [a2783705] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [c0ad256e] Running [ -f /home/deploy/Hello/shared/puma.rb ] as deploy@13.127.124.45
+ DEBUG [c0ad256e] Command: [ -f /home/deploy/Hello/shared/puma.rb ]
+ DEBUG [c0ad256e] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [6e9fc1b6] Running [ -f /home/deploy/Hello/current/REVISION ] as deploy@13.127.124.45
+ DEBUG [6e9fc1b6] Command: [ -f /home/deploy/Hello/current/REVISION ]
+ DEBUG [6e9fc1b6] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [860abb4c] Running /usr/bin/env cat /home/deploy/Hello/current/REVISION 2>/dev/null as deploy@13.127.124.45
+ DEBUG [860abb4c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env cat /home/deploy/Hello/current/REVISION 2>/dev/null )
+ DEBUG [860abb4c] 	906fdd15cc7b3d67f1fd0e7aed715509e56b3927
+ DEBUG [860abb4c] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [0a05b3ea] Running [ -f /home/deploy/Hello/repo/HEAD ] as deploy@13.127.124.45
+ DEBUG [0a05b3ea] Command: [ -f /home/deploy/Hello/repo/HEAD ]
+ DEBUG [0a05b3ea] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/Hello/repo
+ DEBUG [fdac6e4d] Running if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [fdac6e4d] Command: if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi
+ DEBUG [fdac6e4d] Finished in 0.053 seconds with exit status 0 (successful).
+  INFO [11225b4a] Running /usr/bin/env git remote set-url origin https://github.com/snehaannadurai21/hello3.git as deploy@13.127.124.45
+ DEBUG [11225b4a] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git remote set-url origin https://github.com/snehaannadurai21/hello3.git )
+  INFO [11225b4a] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO [1b09de8d] Running /usr/bin/env git remote update --prune as deploy@13.127.124.45
+ DEBUG [1b09de8d] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [1b09de8d] 	Fetching origin
+  INFO [1b09de8d] Finished in 0.650 seconds with exit status 0 (successful).
+ DEBUG [1bef2d62] Running if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [1bef2d62] Command: if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi
+ DEBUG [1bef2d62] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [a125c188] Running /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215093617 as deploy@13.127.124.45
+ DEBUG [a125c188] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215093617 )
+  INFO [a125c188] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [d5750666] Running /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/Hello/releases/20231215093617 as deploy@13.127.124.45
+ DEBUG [d5750666] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/Hello/releases/20231215093617 )
+  INFO [d5750666] Finished in 1.005 seconds with exit status 0 (successful).
+ DEBUG [478b5b3a] Running if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [478b5b3a] Command: if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi
+ DEBUG [478b5b3a] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [42804abf] Running /usr/bin/env git rev-list --max-count=1 main as deploy@13.127.124.45
+ DEBUG [42804abf] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git rev-list --max-count=1 main )
+ DEBUG [42804abf] 	e4b46538d4efe97753684ab712ffa44217cb0ce4
+ DEBUG [42804abf] Finished in 0.056 seconds with exit status 0 (successful).
+ DEBUG [38a2e390] Running if test ! -d /home/deploy/Hello/releases/20231215093617; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215093617'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [38a2e390] Command: if test ! -d /home/deploy/Hello/releases/20231215093617; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215093617'" 1>&2; false; fi
+ DEBUG [38a2e390] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [9747e531] Running /usr/bin/env echo "e4b46538d4efe97753684ab712ffa44217cb0ce4" > REVISION as deploy@13.127.124.45
+ DEBUG [9747e531] Command: cd /home/deploy/Hello/releases/20231215093617 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env echo "e4b46538d4efe97753684ab712ffa44217cb0ce4" > REVISION )
+  INFO [9747e531] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [a89f9728] Running /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215093617 /home/deploy/Hello/releases/20231215093617/tmp /home/deploy/Hello/releases/20231215093617/vendor /home/deploy/Hello/releases/20231215093617/public as deploy@13.127.124.45
+ DEBUG [a89f9728] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215093617 /home/deploy/Hello/releases/20231215093617/tmp /home/deploy/Hello/releases/20231215093617/vendor /home/deploy/Hello/releases/20231215093617/public )
+  INFO [a89f9728] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [78ec18bc] Running [ -L /home/deploy/Hello/releases/20231215093617/log ] as deploy@13.127.124.45
+ DEBUG [78ec18bc] Command: [ -L /home/deploy/Hello/releases/20231215093617/log ]
+ DEBUG [78ec18bc] Finished in 0.054 seconds with exit status 1 (failed).
+ DEBUG [8a425557] Running [ -d /home/deploy/Hello/releases/20231215093617/log ] as deploy@13.127.124.45
+ DEBUG [8a425557] Command: [ -d /home/deploy/Hello/releases/20231215093617/log ]
+ DEBUG [8a425557] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [ed987b2e] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215093617/log as deploy@13.127.124.45
+ DEBUG [ed987b2e] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215093617/log )
+  INFO [ed987b2e] Finished in 0.062 seconds with exit status 0 (successful).
+  INFO [91658549] Running /usr/bin/env ln -s /home/deploy/Hello/shared/log /home/deploy/Hello/releases/20231215093617/log as deploy@13.127.124.45
+ DEBUG [91658549] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/log /home/deploy/Hello/releases/20231215093617/log )
+  INFO [91658549] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [41df01a9] Running [ -L /home/deploy/Hello/releases/20231215093617/tmp/pids ] as deploy@13.127.124.45
+ DEBUG [41df01a9] Command: [ -L /home/deploy/Hello/releases/20231215093617/tmp/pids ]
+ DEBUG [41df01a9] Finished in 0.051 seconds with exit status 1 (failed).
+ DEBUG [57223a86] Running [ -d /home/deploy/Hello/releases/20231215093617/tmp/pids ] as deploy@13.127.124.45
+ DEBUG [57223a86] Command: [ -d /home/deploy/Hello/releases/20231215093617/tmp/pids ]
+ DEBUG [57223a86] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [0e89e1a3] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215093617/tmp/pids as deploy@13.127.124.45
+ DEBUG [0e89e1a3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215093617/tmp/pids )
+  INFO [0e89e1a3] Finished in 0.054 seconds with exit status 0 (successful).
+  INFO [3b274172] Running /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/releases/20231215093617/tmp/pids as deploy@13.127.124.45
+ DEBUG [3b274172] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/releases/20231215093617/tmp/pids )
+  INFO [3b274172] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [41352980] Running [ -L /home/deploy/Hello/releases/20231215093617/tmp/cache ] as deploy@13.127.124.45
+ DEBUG [41352980] Command: [ -L /home/deploy/Hello/releases/20231215093617/tmp/cache ]
+ DEBUG [41352980] Finished in 0.052 seconds with exit status 1 (failed).
+ DEBUG [0deed0f2] Running [ -d /home/deploy/Hello/releases/20231215093617/tmp/cache ] as deploy@13.127.124.45
+ DEBUG [0deed0f2] Command: [ -d /home/deploy/Hello/releases/20231215093617/tmp/cache ]
+ DEBUG [0deed0f2] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [355065a5] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215093617/tmp/cache as deploy@13.127.124.45
+ DEBUG [355065a5] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215093617/tmp/cache )
+  INFO [355065a5] Finished in 0.105 seconds with exit status 0 (successful).
+  INFO [8d697849] Running /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/releases/20231215093617/tmp/cache as deploy@13.127.124.45
+ DEBUG [8d697849] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/releases/20231215093617/tmp/cache )
+  INFO [8d697849] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [02f4cea5] Running [ -L /home/deploy/Hello/releases/20231215093617/tmp/sockets ] as deploy@13.127.124.45
+ DEBUG [02f4cea5] Command: [ -L /home/deploy/Hello/releases/20231215093617/tmp/sockets ]
+ DEBUG [02f4cea5] Finished in 0.051 seconds with exit status 1 (failed).
+ DEBUG [bb44589e] Running [ -d /home/deploy/Hello/releases/20231215093617/tmp/sockets ] as deploy@13.127.124.45
+ DEBUG [bb44589e] Command: [ -d /home/deploy/Hello/releases/20231215093617/tmp/sockets ]
+ DEBUG [bb44589e] Finished in 0.052 seconds with exit status 1 (failed).
+  INFO [47da13c9] Running /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/releases/20231215093617/tmp/sockets as deploy@13.127.124.45
+ DEBUG [47da13c9] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/releases/20231215093617/tmp/sockets )
+  INFO [47da13c9] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [d5d5c5d4] Running [ -L /home/deploy/Hello/releases/20231215093617/vendor/bundle ] as deploy@13.127.124.45
+ DEBUG [d5d5c5d4] Command: [ -L /home/deploy/Hello/releases/20231215093617/vendor/bundle ]
+ DEBUG [d5d5c5d4] Finished in 0.051 seconds with exit status 1 (failed).
+ DEBUG [21cb0fe8] Running [ -d /home/deploy/Hello/releases/20231215093617/vendor/bundle ] as deploy@13.127.124.45
+ DEBUG [21cb0fe8] Command: [ -d /home/deploy/Hello/releases/20231215093617/vendor/bundle ]
+ DEBUG [21cb0fe8] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [90ccacb0] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215093617/vendor/bundle as deploy@13.127.124.45
+ DEBUG [90ccacb0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215093617/vendor/bundle )
+  INFO [90ccacb0] Finished in 0.207 seconds with exit status 0 (successful).
+  INFO [72f43dd0] Running /usr/bin/env ln -s /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/releases/20231215093617/vendor/bundle as deploy@13.127.124.45
+ DEBUG [72f43dd0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/releases/20231215093617/vendor/bundle )
+  INFO [72f43dd0] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [83c914e9] Running [ -L /home/deploy/Hello/releases/20231215093617/.bundle ] as deploy@13.127.124.45
+ DEBUG [83c914e9] Command: [ -L /home/deploy/Hello/releases/20231215093617/.bundle ]
+ DEBUG [83c914e9] Finished in 0.050 seconds with exit status 1 (failed).
+ DEBUG [00c18884] Running [ -d /home/deploy/Hello/releases/20231215093617/.bundle ] as deploy@13.127.124.45
+ DEBUG [00c18884] Command: [ -d /home/deploy/Hello/releases/20231215093617/.bundle ]
+ DEBUG [00c18884] Finished in 0.050 seconds with exit status 1 (failed).
+  INFO [83abe4a6] Running /usr/bin/env ln -s /home/deploy/Hello/shared/.bundle /home/deploy/Hello/releases/20231215093617/.bundle as deploy@13.127.124.45
+ DEBUG [83abe4a6] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/.bundle /home/deploy/Hello/releases/20231215093617/.bundle )
+  INFO [83abe4a6] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [561a4763] Running [ -L /home/deploy/Hello/releases/20231215093617/public/system ] as deploy@13.127.124.45
+ DEBUG [561a4763] Command: [ -L /home/deploy/Hello/releases/20231215093617/public/system ]
+ DEBUG [561a4763] Finished in 0.051 seconds with exit status 1 (failed).
+ DEBUG [82d1e7cf] Running [ -d /home/deploy/Hello/releases/20231215093617/public/system ] as deploy@13.127.124.45
+ DEBUG [82d1e7cf] Command: [ -d /home/deploy/Hello/releases/20231215093617/public/system ]
+ DEBUG [82d1e7cf] Finished in 0.052 seconds with exit status 1 (failed).
+  INFO [bdadeda0] Running /usr/bin/env ln -s /home/deploy/Hello/shared/public/system /home/deploy/Hello/releases/20231215093617/public/system as deploy@13.127.124.45
+ DEBUG [bdadeda0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/public/system /home/deploy/Hello/releases/20231215093617/public/system )
+  INFO [bdadeda0] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [667be1a6] Running [ -L /home/deploy/Hello/releases/20231215093617/public/uploads ] as deploy@13.127.124.45
+ DEBUG [667be1a6] Command: [ -L /home/deploy/Hello/releases/20231215093617/public/uploads ]
+ DEBUG [667be1a6] Finished in 0.051 seconds with exit status 1 (failed).
+ DEBUG [cc41dc79] Running [ -d /home/deploy/Hello/releases/20231215093617/public/uploads ] as deploy@13.127.124.45
+ DEBUG [cc41dc79] Command: [ -d /home/deploy/Hello/releases/20231215093617/public/uploads ]
+ DEBUG [cc41dc79] Finished in 0.050 seconds with exit status 1 (failed).
+  INFO [be9505ac] Running /usr/bin/env ln -s /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/releases/20231215093617/public/uploads as deploy@13.127.124.45
+ DEBUG [be9505ac] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/releases/20231215093617/public/uploads )
+  INFO [be9505ac] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [a2ee6afe] Running [ -L /home/deploy/Hello/releases/20231215093617/public/assets ] as deploy@13.127.124.45
+ DEBUG [a2ee6afe] Command: [ -L /home/deploy/Hello/releases/20231215093617/public/assets ]
+ DEBUG [a2ee6afe] Finished in 0.059 seconds with exit status 1 (failed).
+ DEBUG [0b2a78ec] Running [ -d /home/deploy/Hello/releases/20231215093617/public/assets ] as deploy@13.127.124.45
+ DEBUG [0b2a78ec] Command: [ -d /home/deploy/Hello/releases/20231215093617/public/assets ]
+ DEBUG [0b2a78ec] Finished in 0.051 seconds with exit status 1 (failed).
+  INFO [7aa8cd44] Running /usr/bin/env ln -s /home/deploy/Hello/shared/public/assets /home/deploy/Hello/releases/20231215093617/public/assets as deploy@13.127.124.45
+ DEBUG [7aa8cd44] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/public/assets /home/deploy/Hello/releases/20231215093617/public/assets )
+  INFO [7aa8cd44] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [73782c23] Running if test ! -d /home/deploy/Hello/releases/20231215093617; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215093617'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [73782c23] Command: if test ! -d /home/deploy/Hello/releases/20231215093617; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215093617'" 1>&2; false; fi
+ DEBUG [73782c23] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [c7847abd] Running $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true as deploy@13.127.124.45
+ DEBUG [c7847abd] Command: cd /home/deploy/Hello/releases/20231215093617 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true )
+  INFO [c7847abd] Finished in 0.579 seconds with exit status 0 (successful).
+  INFO [aa60520c] Running $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/Hello/shared/bundle as deploy@13.127.124.45
+ DEBUG [aa60520c] Command: cd /home/deploy/Hello/releases/20231215093617 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/Hello/shared/bundle )
+  INFO [aa60520c] Finished in 0.508 seconds with exit status 0 (successful).
+  INFO [417be99b] Running $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test as deploy@13.127.124.45
+ DEBUG [417be99b] Command: cd /home/deploy/Hello/releases/20231215093617 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test )
+  INFO [417be99b] Finished in 0.609 seconds with exit status 0 (successful).
+ DEBUG [f96b940c] Running if test ! -d /home/deploy/Hello/releases/20231215093617; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215093617'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [f96b940c] Command: if test ! -d /home/deploy/Hello/releases/20231215093617; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215093617'" 1>&2; false; fi
+ DEBUG [f96b940c] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [3ea56fb0] Running $HOME/.rbenv/bin/rbenv exec bundle check as deploy@13.127.124.45
+ DEBUG [3ea56fb0] Command: cd /home/deploy/Hello/releases/20231215093617 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle check )
+ DEBUG [3ea56fb0] 	Your bundle only supports platforms ["x86_64-linux-musl"] but your local
+platform is x86_64-linux. Add the current platform to the lockfile with `bundle
+lock --add-platform x86_64-linux` and try again.
+ DEBUG [3ea56fb0] Finished in 0.558 seconds with exit status 16 (failed).
+  INFO [eb98c65b] Running $HOME/.rbenv/bin/rbenv exec bundle install --jobs 4 --quiet as deploy@13.127.124.45
+ DEBUG [eb98c65b] Command: cd /home/deploy/Hello/releases/20231215093617 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle install --jobs 4 --quiet )
+ DEBUG [eb98c65b] 	Your bundle only supports platforms ["x86_64-linux-musl"] but your local
+platform is x86_64-linux. Add the current platform to the lockfile with `bundle
+lock --add-platform x86_64-linux` and try again.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-12-15 09:49:49 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [43910230] Running [ -d $HOME/.rbenv/versions/2.7.5 ] as deploy@13.127.124.45
+ DEBUG [43910230] Command: [ -d $HOME/.rbenv/versions/2.7.5 ]
+ DEBUG [43910230] Finished in 0.950 seconds with exit status 0 (successful).
+  INFO [83b68478] Running /usr/bin/env sudo service puma restart as deploy@13.127.124.45
+ DEBUG [83b68478] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env sudo service puma restart )
+  INFO [83b68478] Finished in 0.123 seconds with exit status 0 (successful).
+  INFO [e946588f] Running /usr/bin/env mkdir -p /tmp as deploy@13.127.124.45
+ DEBUG [e946588f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /tmp )
+  INFO [e946588f] Finished in 0.070 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Hello-production-.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Hello-production-.sh 100.0%
+  INFO [d9325495] Running /usr/bin/env chmod 700 /tmp/git-ssh-Hello-production-.sh as deploy@13.127.124.45
+ DEBUG [d9325495] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env chmod 700 /tmp/git-ssh-Hello-production-.sh )
+  INFO [d9325495] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [a44a3ab5] Running /usr/bin/env git ls-remote https://github.com/snehaannadurai21/hello3.git HEAD as deploy@13.127.124.45
+ DEBUG [a44a3ab5] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git ls-remote https://github.com/snehaannadurai21/hello3.git HEAD )
+ DEBUG [a44a3ab5] 	e4b46538d4efe97753684ab712ffa44217cb0ce4	HEAD
+  INFO [a44a3ab5] Finished in 0.669 seconds with exit status 0 (successful).
+  INFO [797787ba] Running /usr/bin/env mkdir -p /home/deploy/Hello/shared /home/deploy/Hello/releases as deploy@13.127.124.45
+ DEBUG [797787ba] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /home/deploy/Hello/shared /home/deploy/Hello/releases )
+  INFO [797787ba] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [1653a743] Running /usr/bin/env mkdir -p /home/deploy/Hello/shared/log /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/shared/.bundle /home/deploy/Hello/shared/public/system /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/shared/public/assets as deploy@13.127.124.45
+ DEBUG [1653a743] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /home/deploy/Hello/shared/log /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/shared/.bundle /home/deploy/Hello/shared/public/system /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/shared/public/assets )
+  INFO [1653a743] Finished in 0.071 seconds with exit status 0 (successful).
+ DEBUG [6b9cb621] Running [ -f /home/deploy/Hello/shared/puma.rb ] as deploy@13.127.124.45
+ DEBUG [6b9cb621] Command: [ -f /home/deploy/Hello/shared/puma.rb ]
+ DEBUG [6b9cb621] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG [8bb0bd58] Running [ -f /home/deploy/Hello/current/REVISION ] as deploy@13.127.124.45
+ DEBUG [8bb0bd58] Command: [ -f /home/deploy/Hello/current/REVISION ]
+ DEBUG [8bb0bd58] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG [5dfaa966] Running /usr/bin/env cat /home/deploy/Hello/current/REVISION 2>/dev/null as deploy@13.127.124.45
+ DEBUG [5dfaa966] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env cat /home/deploy/Hello/current/REVISION 2>/dev/null )
+ DEBUG [5dfaa966] 	906fdd15cc7b3d67f1fd0e7aed715509e56b3927
+ DEBUG [5dfaa966] Finished in 0.069 seconds with exit status 0 (successful).
+ DEBUG [33776d26] Running [ -f /home/deploy/Hello/repo/HEAD ] as deploy@13.127.124.45
+ DEBUG [33776d26] Command: [ -f /home/deploy/Hello/repo/HEAD ]
+ DEBUG [33776d26] Finished in 0.068 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/Hello/repo
+ DEBUG [e2b0148a] Running if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [e2b0148a] Command: if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi
+ DEBUG [e2b0148a] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO [dd58480d] Running /usr/bin/env git remote set-url origin https://github.com/snehaannadurai21/hello3.git as deploy@13.127.124.45
+ DEBUG [dd58480d] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git remote set-url origin https://github.com/snehaannadurai21/hello3.git )
+  INFO [dd58480d] Finished in 0.070 seconds with exit status 0 (successful).
+  INFO [a4288711] Running /usr/bin/env git remote update --prune as deploy@13.127.124.45
+ DEBUG [a4288711] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [a4288711] 	Fetching origin
+  INFO [a4288711] Finished in 0.694 seconds with exit status 0 (successful).
+ DEBUG [7c80bef3] Running if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [7c80bef3] Command: if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi
+ DEBUG [7c80bef3] Finished in 0.065 seconds with exit status 0 (successful).
+  INFO [55766e83] Running /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215094951 as deploy@13.127.124.45
+ DEBUG [55766e83] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215094951 )
+  INFO [55766e83] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [808edc35] Running /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/Hello/releases/20231215094951 as deploy@13.127.124.45
+ DEBUG [808edc35] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/Hello/releases/20231215094951 )
+  INFO [808edc35] Finished in 1.083 seconds with exit status 0 (successful).
+ DEBUG [b9be7093] Running if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [b9be7093] Command: if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi
+ DEBUG [b9be7093] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [5d5d16e0] Running /usr/bin/env git rev-list --max-count=1 main as deploy@13.127.124.45
+ DEBUG [5d5d16e0] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git rev-list --max-count=1 main )
+ DEBUG [5d5d16e0] 	e4b46538d4efe97753684ab712ffa44217cb0ce4
+ DEBUG [5d5d16e0] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [b9a82750] Running if test ! -d /home/deploy/Hello/releases/20231215094951; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215094951'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [b9a82750] Command: if test ! -d /home/deploy/Hello/releases/20231215094951; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215094951'" 1>&2; false; fi
+ DEBUG [b9a82750] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [16b94036] Running /usr/bin/env echo "e4b46538d4efe97753684ab712ffa44217cb0ce4" > REVISION as deploy@13.127.124.45
+ DEBUG [16b94036] Command: cd /home/deploy/Hello/releases/20231215094951 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env echo "e4b46538d4efe97753684ab712ffa44217cb0ce4" > REVISION )
+  INFO [16b94036] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [7da5174f] Running /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215094951 /home/deploy/Hello/releases/20231215094951/tmp /home/deploy/Hello/releases/20231215094951/vendor /home/deploy/Hello/releases/20231215094951/public as deploy@13.127.124.45
+ DEBUG [7da5174f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215094951 /home/deploy/Hello/releases/20231215094951/tmp /home/deploy/Hello/releases/20231215094951/vendor /home/deploy/Hello/releases/20231215094951/public )
+  INFO [7da5174f] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [8d05e461] Running [ -L /home/deploy/Hello/releases/20231215094951/log ] as deploy@13.127.124.45
+ DEBUG [8d05e461] Command: [ -L /home/deploy/Hello/releases/20231215094951/log ]
+ DEBUG [8d05e461] Finished in 0.049 seconds with exit status 1 (failed).
+ DEBUG [7167235b] Running [ -d /home/deploy/Hello/releases/20231215094951/log ] as deploy@13.127.124.45
+ DEBUG [7167235b] Command: [ -d /home/deploy/Hello/releases/20231215094951/log ]
+ DEBUG [7167235b] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [4a1a7a9b] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215094951/log as deploy@13.127.124.45
+ DEBUG [4a1a7a9b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215094951/log )
+  INFO [4a1a7a9b] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [d1df1616] Running /usr/bin/env ln -s /home/deploy/Hello/shared/log /home/deploy/Hello/releases/20231215094951/log as deploy@13.127.124.45
+ DEBUG [d1df1616] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/log /home/deploy/Hello/releases/20231215094951/log )
+  INFO [d1df1616] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [e991106c] Running [ -L /home/deploy/Hello/releases/20231215094951/tmp/pids ] as deploy@13.127.124.45
+ DEBUG [e991106c] Command: [ -L /home/deploy/Hello/releases/20231215094951/tmp/pids ]
+ DEBUG [e991106c] Finished in 0.049 seconds with exit status 1 (failed).
+ DEBUG [459a08c5] Running [ -d /home/deploy/Hello/releases/20231215094951/tmp/pids ] as deploy@13.127.124.45
+ DEBUG [459a08c5] Command: [ -d /home/deploy/Hello/releases/20231215094951/tmp/pids ]
+ DEBUG [459a08c5] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [65e049c2] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215094951/tmp/pids as deploy@13.127.124.45
+ DEBUG [65e049c2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215094951/tmp/pids )
+  INFO [65e049c2] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [364c3e8d] Running /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/releases/20231215094951/tmp/pids as deploy@13.127.124.45
+ DEBUG [364c3e8d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/releases/20231215094951/tmp/pids )
+  INFO [364c3e8d] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [e43c0c41] Running [ -L /home/deploy/Hello/releases/20231215094951/tmp/cache ] as deploy@13.127.124.45
+ DEBUG [e43c0c41] Command: [ -L /home/deploy/Hello/releases/20231215094951/tmp/cache ]
+ DEBUG [e43c0c41] Finished in 0.048 seconds with exit status 1 (failed).
+ DEBUG [25815a05] Running [ -d /home/deploy/Hello/releases/20231215094951/tmp/cache ] as deploy@13.127.124.45
+ DEBUG [25815a05] Command: [ -d /home/deploy/Hello/releases/20231215094951/tmp/cache ]
+ DEBUG [25815a05] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [03259be5] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215094951/tmp/cache as deploy@13.127.124.45
+ DEBUG [03259be5] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215094951/tmp/cache )
+  INFO [03259be5] Finished in 0.099 seconds with exit status 0 (successful).
+  INFO [9f332b77] Running /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/releases/20231215094951/tmp/cache as deploy@13.127.124.45
+ DEBUG [9f332b77] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/releases/20231215094951/tmp/cache )
+  INFO [9f332b77] Finished in 0.056 seconds with exit status 0 (successful).
+ DEBUG [13abd38f] Running [ -L /home/deploy/Hello/releases/20231215094951/tmp/sockets ] as deploy@13.127.124.45
+ DEBUG [13abd38f] Command: [ -L /home/deploy/Hello/releases/20231215094951/tmp/sockets ]
+ DEBUG [13abd38f] Finished in 0.049 seconds with exit status 1 (failed).
+ DEBUG [1935bbce] Running [ -d /home/deploy/Hello/releases/20231215094951/tmp/sockets ] as deploy@13.127.124.45
+ DEBUG [1935bbce] Command: [ -d /home/deploy/Hello/releases/20231215094951/tmp/sockets ]
+ DEBUG [1935bbce] Finished in 0.048 seconds with exit status 1 (failed).
+  INFO [d23bba74] Running /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/releases/20231215094951/tmp/sockets as deploy@13.127.124.45
+ DEBUG [d23bba74] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/releases/20231215094951/tmp/sockets )
+  INFO [d23bba74] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [6d20df2f] Running [ -L /home/deploy/Hello/releases/20231215094951/vendor/bundle ] as deploy@13.127.124.45
+ DEBUG [6d20df2f] Command: [ -L /home/deploy/Hello/releases/20231215094951/vendor/bundle ]
+ DEBUG [6d20df2f] Finished in 0.049 seconds with exit status 1 (failed).
+ DEBUG [a36e6c9e] Running [ -d /home/deploy/Hello/releases/20231215094951/vendor/bundle ] as deploy@13.127.124.45
+ DEBUG [a36e6c9e] Command: [ -d /home/deploy/Hello/releases/20231215094951/vendor/bundle ]
+ DEBUG [a36e6c9e] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [e1ecc8d8] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215094951/vendor/bundle as deploy@13.127.124.45
+ DEBUG [e1ecc8d8] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215094951/vendor/bundle )
+  INFO [e1ecc8d8] Finished in 0.177 seconds with exit status 0 (successful).
+  INFO [0c808cc1] Running /usr/bin/env ln -s /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/releases/20231215094951/vendor/bundle as deploy@13.127.124.45
+ DEBUG [0c808cc1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/releases/20231215094951/vendor/bundle )
+  INFO [0c808cc1] Finished in 0.056 seconds with exit status 0 (successful).
+ DEBUG [6712f5a2] Running [ -L /home/deploy/Hello/releases/20231215094951/.bundle ] as deploy@13.127.124.45
+ DEBUG [6712f5a2] Command: [ -L /home/deploy/Hello/releases/20231215094951/.bundle ]
+ DEBUG [6712f5a2] Finished in 0.050 seconds with exit status 1 (failed).
+ DEBUG [ba6b42ff] Running [ -d /home/deploy/Hello/releases/20231215094951/.bundle ] as deploy@13.127.124.45
+ DEBUG [ba6b42ff] Command: [ -d /home/deploy/Hello/releases/20231215094951/.bundle ]
+ DEBUG [ba6b42ff] Finished in 0.048 seconds with exit status 1 (failed).
+  INFO [7804d162] Running /usr/bin/env ln -s /home/deploy/Hello/shared/.bundle /home/deploy/Hello/releases/20231215094951/.bundle as deploy@13.127.124.45
+ DEBUG [7804d162] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/.bundle /home/deploy/Hello/releases/20231215094951/.bundle )
+  INFO [7804d162] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [57b56758] Running [ -L /home/deploy/Hello/releases/20231215094951/public/system ] as deploy@13.127.124.45
+ DEBUG [57b56758] Command: [ -L /home/deploy/Hello/releases/20231215094951/public/system ]
+ DEBUG [57b56758] Finished in 0.050 seconds with exit status 1 (failed).
+ DEBUG [7e9b15dd] Running [ -d /home/deploy/Hello/releases/20231215094951/public/system ] as deploy@13.127.124.45
+ DEBUG [7e9b15dd] Command: [ -d /home/deploy/Hello/releases/20231215094951/public/system ]
+ DEBUG [7e9b15dd] Finished in 0.050 seconds with exit status 1 (failed).
+  INFO [9c0f5ea3] Running /usr/bin/env ln -s /home/deploy/Hello/shared/public/system /home/deploy/Hello/releases/20231215094951/public/system as deploy@13.127.124.45
+ DEBUG [9c0f5ea3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/public/system /home/deploy/Hello/releases/20231215094951/public/system )
+  INFO [9c0f5ea3] Finished in 0.066 seconds with exit status 0 (successful).
+ DEBUG [8530bd5f] Running [ -L /home/deploy/Hello/releases/20231215094951/public/uploads ] as deploy@13.127.124.45
+ DEBUG [8530bd5f] Command: [ -L /home/deploy/Hello/releases/20231215094951/public/uploads ]
+ DEBUG [8530bd5f] Finished in 0.055 seconds with exit status 1 (failed).
+ DEBUG [16f65538] Running [ -d /home/deploy/Hello/releases/20231215094951/public/uploads ] as deploy@13.127.124.45
+ DEBUG [16f65538] Command: [ -d /home/deploy/Hello/releases/20231215094951/public/uploads ]
+ DEBUG [16f65538] Finished in 0.049 seconds with exit status 1 (failed).
+  INFO [69484748] Running /usr/bin/env ln -s /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/releases/20231215094951/public/uploads as deploy@13.127.124.45
+ DEBUG [69484748] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/releases/20231215094951/public/uploads )
+  INFO [69484748] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [8fa943f1] Running [ -L /home/deploy/Hello/releases/20231215094951/public/assets ] as deploy@13.127.124.45
+ DEBUG [8fa943f1] Command: [ -L /home/deploy/Hello/releases/20231215094951/public/assets ]
+ DEBUG [8fa943f1] Finished in 0.048 seconds with exit status 1 (failed).
+ DEBUG [99916e26] Running [ -d /home/deploy/Hello/releases/20231215094951/public/assets ] as deploy@13.127.124.45
+ DEBUG [99916e26] Command: [ -d /home/deploy/Hello/releases/20231215094951/public/assets ]
+ DEBUG [99916e26] Finished in 0.049 seconds with exit status 1 (failed).
+  INFO [454e10fb] Running /usr/bin/env ln -s /home/deploy/Hello/shared/public/assets /home/deploy/Hello/releases/20231215094951/public/assets as deploy@13.127.124.45
+ DEBUG [454e10fb] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/public/assets /home/deploy/Hello/releases/20231215094951/public/assets )
+  INFO [454e10fb] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [a6eff7b6] Running if test ! -d /home/deploy/Hello/releases/20231215094951; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215094951'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [a6eff7b6] Command: if test ! -d /home/deploy/Hello/releases/20231215094951; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215094951'" 1>&2; false; fi
+ DEBUG [a6eff7b6] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [994d7e81] Running $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true as deploy@13.127.124.45
+ DEBUG [994d7e81] Command: cd /home/deploy/Hello/releases/20231215094951 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true )
+  INFO [994d7e81] Finished in 0.451 seconds with exit status 0 (successful).
+  INFO [0913d03a] Running $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/Hello/shared/bundle as deploy@13.127.124.45
+ DEBUG [0913d03a] Command: cd /home/deploy/Hello/releases/20231215094951 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/Hello/shared/bundle )
+  INFO [0913d03a] Finished in 0.508 seconds with exit status 0 (successful).
+  INFO [77076a98] Running $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test as deploy@13.127.124.45
+ DEBUG [77076a98] Command: cd /home/deploy/Hello/releases/20231215094951 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test )
+  INFO [77076a98] Finished in 0.507 seconds with exit status 0 (successful).
+ DEBUG [dc968003] Running if test ! -d /home/deploy/Hello/releases/20231215094951; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215094951'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [dc968003] Command: if test ! -d /home/deploy/Hello/releases/20231215094951; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215094951'" 1>&2; false; fi
+ DEBUG [dc968003] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [763b9103] Running $HOME/.rbenv/bin/rbenv exec bundle check as deploy@13.127.124.45
+ DEBUG [763b9103] Command: cd /home/deploy/Hello/releases/20231215094951 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle check )
+ DEBUG [763b9103] 	Your bundle only supports platforms ["x86_64-linux-musl"] but your local
+platform is x86_64-linux. Add the current platform to the lockfile with `bundle
+lock --add-platform x86_64-linux` and try again.
+ DEBUG [763b9103] Finished in 0.557 seconds with exit status 16 (failed).
+  INFO [3f1e341f] Running $HOME/.rbenv/bin/rbenv exec bundle install --jobs 4 --quiet as deploy@13.127.124.45
+ DEBUG [3f1e341f] Command: cd /home/deploy/Hello/releases/20231215094951 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle install --jobs 4 --quiet )
+ DEBUG [3f1e341f] 	Your bundle only supports platforms ["x86_64-linux-musl"] but your local
+platform is x86_64-linux. Add the current platform to the lockfile with `bundle
+lock --add-platform x86_64-linux` and try again.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2023-12-15 09:59:34 +0000 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [e62b6d4c] Running [ -d $HOME/.rbenv/versions/2.7.5 ] as deploy@13.127.124.45
+ DEBUG [e62b6d4c] Command: [ -d $HOME/.rbenv/versions/2.7.5 ]
+ DEBUG [e62b6d4c] Finished in 0.842 seconds with exit status 0 (successful).
+  INFO [d339face] Running /usr/bin/env sudo service puma restart as deploy@13.127.124.45
+ DEBUG [d339face] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env sudo service puma restart )
+  INFO [d339face] Finished in 0.096 seconds with exit status 0 (successful).
+  INFO [b6d418e7] Running /usr/bin/env mkdir -p /tmp as deploy@13.127.124.45
+ DEBUG [b6d418e7] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /tmp )
+  INFO [b6d418e7] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Hello-production-.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Hello-production-.sh 100.0%
+  INFO [d5ad68c6] Running /usr/bin/env chmod 700 /tmp/git-ssh-Hello-production-.sh as deploy@13.127.124.45
+ DEBUG [d5ad68c6] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env chmod 700 /tmp/git-ssh-Hello-production-.sh )
+  INFO [d5ad68c6] Finished in 0.051 seconds with exit status 0 (successful).
+  INFO [a76063ba] Running /usr/bin/env git ls-remote https://github.com/snehaannadurai21/hello3.git HEAD as deploy@13.127.124.45
+ DEBUG [a76063ba] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git ls-remote https://github.com/snehaannadurai21/hello3.git HEAD )
+ DEBUG [a76063ba] 	e4b46538d4efe97753684ab712ffa44217cb0ce4	HEAD
+  INFO [a76063ba] Finished in 0.646 seconds with exit status 0 (successful).
+  INFO [8d14116f] Running /usr/bin/env mkdir -p /home/deploy/Hello/shared /home/deploy/Hello/releases as deploy@13.127.124.45
+ DEBUG [8d14116f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /home/deploy/Hello/shared /home/deploy/Hello/releases )
+  INFO [8d14116f] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [5221fe23] Running /usr/bin/env mkdir -p /home/deploy/Hello/shared/log /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/shared/.bundle /home/deploy/Hello/shared/public/system /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/shared/public/assets as deploy@13.127.124.45
+ DEBUG [5221fe23] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /home/deploy/Hello/shared/log /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/shared/.bundle /home/deploy/Hello/shared/public/system /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/shared/public/assets )
+  INFO [5221fe23] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [7d27ec47] Running [ -f /home/deploy/Hello/shared/puma.rb ] as deploy@13.127.124.45
+ DEBUG [7d27ec47] Command: [ -f /home/deploy/Hello/shared/puma.rb ]
+ DEBUG [7d27ec47] Finished in 0.057 seconds with exit status 0 (successful).
+ DEBUG [b1924f3b] Running [ -f /home/deploy/Hello/current/REVISION ] as deploy@13.127.124.45
+ DEBUG [b1924f3b] Command: [ -f /home/deploy/Hello/current/REVISION ]
+ DEBUG [b1924f3b] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [244db033] Running /usr/bin/env cat /home/deploy/Hello/current/REVISION 2>/dev/null as deploy@13.127.124.45
+ DEBUG [244db033] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env cat /home/deploy/Hello/current/REVISION 2>/dev/null )
+ DEBUG [244db033] 	906fdd15cc7b3d67f1fd0e7aed715509e56b3927
+ DEBUG [244db033] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [214d6c87] Running [ -f /home/deploy/Hello/repo/HEAD ] as deploy@13.127.124.45
+ DEBUG [214d6c87] Command: [ -f /home/deploy/Hello/repo/HEAD ]
+ DEBUG [214d6c87] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/Hello/repo
+ DEBUG [b43d0570] Running if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [b43d0570] Command: if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi
+ DEBUG [b43d0570] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [1b23e516] Running /usr/bin/env git remote set-url origin https://github.com/snehaannadurai21/hello3.git as deploy@13.127.124.45
+ DEBUG [1b23e516] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git remote set-url origin https://github.com/snehaannadurai21/hello3.git )
+  INFO [1b23e516] Finished in 0.049 seconds with exit status 0 (successful).
+  INFO [83be6d8b] Running /usr/bin/env git remote update --prune as deploy@13.127.124.45
+ DEBUG [83be6d8b] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [83be6d8b] 	Fetching origin
+  INFO [83be6d8b] Finished in 0.694 seconds with exit status 0 (successful).
+ DEBUG [ee98e443] Running if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [ee98e443] Command: if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi
+ DEBUG [ee98e443] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [5bd1b405] Running /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215095936 as deploy@13.127.124.45
+ DEBUG [5bd1b405] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215095936 )
+  INFO [5bd1b405] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [f9186ade] Running /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/Hello/releases/20231215095936 as deploy@13.127.124.45
+ DEBUG [f9186ade] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git archive main | /usr/bin/env tar -x -f - -C /home/deploy/Hello/releases/20231215095936 )
+  INFO [f9186ade] Finished in 1.025 seconds with exit status 0 (successful).
+ DEBUG [d97132b2] Running if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [d97132b2] Command: if test ! -d /home/deploy/Hello/repo; then echo "Directory does not exist '/home/deploy/Hello/repo'" 1>&2; false; fi
+ DEBUG [d97132b2] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [0ea06e7b] Running /usr/bin/env git rev-list --max-count=1 main as deploy@13.127.124.45
+ DEBUG [0ea06e7b] Command: cd /home/deploy/Hello/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Hello-production-.sh" ; /usr/bin/env git rev-list --max-count=1 main )
+ DEBUG [0ea06e7b] 	e4b46538d4efe97753684ab712ffa44217cb0ce4
+ DEBUG [0ea06e7b] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [d0d11e55] Running if test ! -d /home/deploy/Hello/releases/20231215095936; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215095936'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [d0d11e55] Command: if test ! -d /home/deploy/Hello/releases/20231215095936; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215095936'" 1>&2; false; fi
+ DEBUG [d0d11e55] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [5bb223d3] Running /usr/bin/env echo "e4b46538d4efe97753684ab712ffa44217cb0ce4" > REVISION as deploy@13.127.124.45
+ DEBUG [5bb223d3] Command: cd /home/deploy/Hello/releases/20231215095936 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env echo "e4b46538d4efe97753684ab712ffa44217cb0ce4" > REVISION )
+  INFO [5bb223d3] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [87a75cf3] Running /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215095936 /home/deploy/Hello/releases/20231215095936/tmp /home/deploy/Hello/releases/20231215095936/vendor /home/deploy/Hello/releases/20231215095936/public as deploy@13.127.124.45
+ DEBUG [87a75cf3] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env mkdir -p /home/deploy/Hello/releases/20231215095936 /home/deploy/Hello/releases/20231215095936/tmp /home/deploy/Hello/releases/20231215095936/vendor /home/deploy/Hello/releases/20231215095936/public )
+  INFO [87a75cf3] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [6c70d50d] Running [ -L /home/deploy/Hello/releases/20231215095936/log ] as deploy@13.127.124.45
+ DEBUG [6c70d50d] Command: [ -L /home/deploy/Hello/releases/20231215095936/log ]
+ DEBUG [6c70d50d] Finished in 0.046 seconds with exit status 1 (failed).
+ DEBUG [feba1b62] Running [ -d /home/deploy/Hello/releases/20231215095936/log ] as deploy@13.127.124.45
+ DEBUG [feba1b62] Command: [ -d /home/deploy/Hello/releases/20231215095936/log ]
+ DEBUG [feba1b62] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [2b450e96] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215095936/log as deploy@13.127.124.45
+ DEBUG [2b450e96] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215095936/log )
+  INFO [2b450e96] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [d7faed2f] Running /usr/bin/env ln -s /home/deploy/Hello/shared/log /home/deploy/Hello/releases/20231215095936/log as deploy@13.127.124.45
+ DEBUG [d7faed2f] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/log /home/deploy/Hello/releases/20231215095936/log )
+  INFO [d7faed2f] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [5ce9d0ce] Running [ -L /home/deploy/Hello/releases/20231215095936/tmp/pids ] as deploy@13.127.124.45
+ DEBUG [5ce9d0ce] Command: [ -L /home/deploy/Hello/releases/20231215095936/tmp/pids ]
+ DEBUG [5ce9d0ce] Finished in 0.046 seconds with exit status 1 (failed).
+ DEBUG [fe666a8d] Running [ -d /home/deploy/Hello/releases/20231215095936/tmp/pids ] as deploy@13.127.124.45
+ DEBUG [fe666a8d] Command: [ -d /home/deploy/Hello/releases/20231215095936/tmp/pids ]
+ DEBUG [fe666a8d] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [21059db1] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215095936/tmp/pids as deploy@13.127.124.45
+ DEBUG [21059db1] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215095936/tmp/pids )
+  INFO [21059db1] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [ebf6e6c2] Running /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/releases/20231215095936/tmp/pids as deploy@13.127.124.45
+ DEBUG [ebf6e6c2] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/pids /home/deploy/Hello/releases/20231215095936/tmp/pids )
+  INFO [ebf6e6c2] Finished in 0.097 seconds with exit status 0 (successful).
+ DEBUG [8ff60069] Running [ -L /home/deploy/Hello/releases/20231215095936/tmp/cache ] as deploy@13.127.124.45
+ DEBUG [8ff60069] Command: [ -L /home/deploy/Hello/releases/20231215095936/tmp/cache ]
+ DEBUG [8ff60069] Finished in 0.047 seconds with exit status 1 (failed).
+ DEBUG [48c809de] Running [ -d /home/deploy/Hello/releases/20231215095936/tmp/cache ] as deploy@13.127.124.45
+ DEBUG [48c809de] Command: [ -d /home/deploy/Hello/releases/20231215095936/tmp/cache ]
+ DEBUG [48c809de] Finished in 0.047 seconds with exit status 0 (successful).
+  INFO [96cfabbf] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215095936/tmp/cache as deploy@13.127.124.45
+ DEBUG [96cfabbf] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215095936/tmp/cache )
+  INFO [96cfabbf] Finished in 0.108 seconds with exit status 0 (successful).
+  INFO [ef872a9a] Running /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/releases/20231215095936/tmp/cache as deploy@13.127.124.45
+ DEBUG [ef872a9a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/cache /home/deploy/Hello/releases/20231215095936/tmp/cache )
+  INFO [ef872a9a] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [033fae1e] Running [ -L /home/deploy/Hello/releases/20231215095936/tmp/sockets ] as deploy@13.127.124.45
+ DEBUG [033fae1e] Command: [ -L /home/deploy/Hello/releases/20231215095936/tmp/sockets ]
+ DEBUG [033fae1e] Finished in 0.042 seconds with exit status 1 (failed).
+ DEBUG [7ddcdb97] Running [ -d /home/deploy/Hello/releases/20231215095936/tmp/sockets ] as deploy@13.127.124.45
+ DEBUG [7ddcdb97] Command: [ -d /home/deploy/Hello/releases/20231215095936/tmp/sockets ]
+ DEBUG [7ddcdb97] Finished in 0.045 seconds with exit status 1 (failed).
+  INFO [272da0ab] Running /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/releases/20231215095936/tmp/sockets as deploy@13.127.124.45
+ DEBUG [272da0ab] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/tmp/sockets /home/deploy/Hello/releases/20231215095936/tmp/sockets )
+  INFO [272da0ab] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [38681ac0] Running [ -L /home/deploy/Hello/releases/20231215095936/vendor/bundle ] as deploy@13.127.124.45
+ DEBUG [38681ac0] Command: [ -L /home/deploy/Hello/releases/20231215095936/vendor/bundle ]
+ DEBUG [38681ac0] Finished in 0.043 seconds with exit status 1 (failed).
+ DEBUG [880b8a02] Running [ -d /home/deploy/Hello/releases/20231215095936/vendor/bundle ] as deploy@13.127.124.45
+ DEBUG [880b8a02] Command: [ -d /home/deploy/Hello/releases/20231215095936/vendor/bundle ]
+ DEBUG [880b8a02] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [121390a0] Running /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215095936/vendor/bundle as deploy@13.127.124.45
+ DEBUG [121390a0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env rm -rf /home/deploy/Hello/releases/20231215095936/vendor/bundle )
+  INFO [121390a0] Finished in 0.183 seconds with exit status 0 (successful).
+  INFO [64a3dd43] Running /usr/bin/env ln -s /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/releases/20231215095936/vendor/bundle as deploy@13.127.124.45
+ DEBUG [64a3dd43] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/vendor/bundle /home/deploy/Hello/releases/20231215095936/vendor/bundle )
+  INFO [64a3dd43] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [f0a42298] Running [ -L /home/deploy/Hello/releases/20231215095936/.bundle ] as deploy@13.127.124.45
+ DEBUG [f0a42298] Command: [ -L /home/deploy/Hello/releases/20231215095936/.bundle ]
+ DEBUG [f0a42298] Finished in 0.044 seconds with exit status 1 (failed).
+ DEBUG [6b408722] Running [ -d /home/deploy/Hello/releases/20231215095936/.bundle ] as deploy@13.127.124.45
+ DEBUG [6b408722] Command: [ -d /home/deploy/Hello/releases/20231215095936/.bundle ]
+ DEBUG [6b408722] Finished in 0.045 seconds with exit status 1 (failed).
+  INFO [9b847557] Running /usr/bin/env ln -s /home/deploy/Hello/shared/.bundle /home/deploy/Hello/releases/20231215095936/.bundle as deploy@13.127.124.45
+ DEBUG [9b847557] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/.bundle /home/deploy/Hello/releases/20231215095936/.bundle )
+  INFO [9b847557] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [ee1c47f3] Running [ -L /home/deploy/Hello/releases/20231215095936/public/system ] as deploy@13.127.124.45
+ DEBUG [ee1c47f3] Command: [ -L /home/deploy/Hello/releases/20231215095936/public/system ]
+ DEBUG [ee1c47f3] Finished in 0.045 seconds with exit status 1 (failed).
+ DEBUG [39baf6a2] Running [ -d /home/deploy/Hello/releases/20231215095936/public/system ] as deploy@13.127.124.45
+ DEBUG [39baf6a2] Command: [ -d /home/deploy/Hello/releases/20231215095936/public/system ]
+ DEBUG [39baf6a2] Finished in 0.048 seconds with exit status 1 (failed).
+  INFO [6ef852c4] Running /usr/bin/env ln -s /home/deploy/Hello/shared/public/system /home/deploy/Hello/releases/20231215095936/public/system as deploy@13.127.124.45
+ DEBUG [6ef852c4] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/public/system /home/deploy/Hello/releases/20231215095936/public/system )
+  INFO [6ef852c4] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [55ab54d4] Running [ -L /home/deploy/Hello/releases/20231215095936/public/uploads ] as deploy@13.127.124.45
+ DEBUG [55ab54d4] Command: [ -L /home/deploy/Hello/releases/20231215095936/public/uploads ]
+ DEBUG [55ab54d4] Finished in 0.048 seconds with exit status 1 (failed).
+ DEBUG [91f7d8a0] Running [ -d /home/deploy/Hello/releases/20231215095936/public/uploads ] as deploy@13.127.124.45
+ DEBUG [91f7d8a0] Command: [ -d /home/deploy/Hello/releases/20231215095936/public/uploads ]
+ DEBUG [91f7d8a0] Finished in 0.047 seconds with exit status 1 (failed).
+  INFO [47b8f296] Running /usr/bin/env ln -s /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/releases/20231215095936/public/uploads as deploy@13.127.124.45
+ DEBUG [47b8f296] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/public/uploads /home/deploy/Hello/releases/20231215095936/public/uploads )
+  INFO [47b8f296] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [0cd3df6a] Running [ -L /home/deploy/Hello/releases/20231215095936/public/assets ] as deploy@13.127.124.45
+ DEBUG [0cd3df6a] Command: [ -L /home/deploy/Hello/releases/20231215095936/public/assets ]
+ DEBUG [0cd3df6a] Finished in 0.050 seconds with exit status 1 (failed).
+ DEBUG [dc837b87] Running [ -d /home/deploy/Hello/releases/20231215095936/public/assets ] as deploy@13.127.124.45
+ DEBUG [dc837b87] Command: [ -d /home/deploy/Hello/releases/20231215095936/public/assets ]
+ DEBUG [dc837b87] Finished in 0.049 seconds with exit status 1 (failed).
+  INFO [7bffc28d] Running /usr/bin/env ln -s /home/deploy/Hello/shared/public/assets /home/deploy/Hello/releases/20231215095936/public/assets as deploy@13.127.124.45
+ DEBUG [7bffc28d] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; /usr/bin/env ln -s /home/deploy/Hello/shared/public/assets /home/deploy/Hello/releases/20231215095936/public/assets )
+  INFO [7bffc28d] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [2a5d4586] Running if test ! -d /home/deploy/Hello/releases/20231215095936; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215095936'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [2a5d4586] Command: if test ! -d /home/deploy/Hello/releases/20231215095936; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215095936'" 1>&2; false; fi
+ DEBUG [2a5d4586] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO [7635f3e4] Running $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true as deploy@13.127.124.45
+ DEBUG [7635f3e4] Command: cd /home/deploy/Hello/releases/20231215095936 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle config --local deployment true )
+ DEBUG [7635f3e4] 	You are replacing the current local value of deployment, which is currently "false"
+  INFO [7635f3e4] Finished in 0.554 seconds with exit status 0 (successful).
+  INFO [eac152c1] Running $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/Hello/shared/bundle as deploy@13.127.124.45
+ DEBUG [eac152c1] Command: cd /home/deploy/Hello/releases/20231215095936 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle config --local path /home/deploy/Hello/shared/bundle )
+  INFO [eac152c1] Finished in 0.505 seconds with exit status 0 (successful).
+  INFO [e64a122a] Running $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test as deploy@13.127.124.45
+ DEBUG [e64a122a] Command: cd /home/deploy/Hello/releases/20231215095936 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle config --local without development:test )
+  INFO [e64a122a] Finished in 0.610 seconds with exit status 0 (successful).
+ DEBUG [ce131f2a] Running if test ! -d /home/deploy/Hello/releases/20231215095936; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215095936'" 1>&2; false; fi as deploy@13.127.124.45
+ DEBUG [ce131f2a] Command: if test ! -d /home/deploy/Hello/releases/20231215095936; then echo "Directory does not exist '/home/deploy/Hello/releases/20231215095936'" 1>&2; false; fi
+ DEBUG [ce131f2a] Finished in 0.045 seconds with exit status 0 (successful).
+ DEBUG [e168209a] Running $HOME/.rbenv/bin/rbenv exec bundle check as deploy@13.127.124.45
+ DEBUG [e168209a] Command: cd /home/deploy/Hello/releases/20231215095936 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle check )
+ DEBUG [e168209a] 	Your bundle only supports platforms ["x86_64-linux-musl"] but your local
+platform is x86_64-linux. Add the current platform to the lockfile with `bundle
+lock --add-platform x86_64-linux` and try again.
+ DEBUG [e168209a] Finished in 0.667 seconds with exit status 16 (failed).
+  INFO [f8c1ff18] Running $HOME/.rbenv/bin/rbenv exec bundle install --jobs 4 --quiet as deploy@13.127.124.45
+ DEBUG [f8c1ff18] Command: cd /home/deploy/Hello/releases/20231215095936 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.7.5" ; $HOME/.rbenv/bin/rbenv exec bundle install --jobs 4 --quiet )
+ DEBUG [f8c1ff18] 	Your bundle only supports platforms ["x86_64-linux-musl"] but your local
+platform is x86_64-linux. Add the current platform to the lockfile with `bundle
+lock --add-platform x86_64-linux` and try again.
