@@ -5,7 +5,7 @@ set :application, "Hello"
 set :repo_url, "https://github.com/snehaannadurai21/hello3.git"
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/Hello"
-set :branch, 'main'   
+set :branch, 'main'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
 # Only keep the last 5 releases to save disk space
