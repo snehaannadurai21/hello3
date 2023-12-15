@@ -11,3 +11,45 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 1291ms (Views: 1094.5ms | ActiveRecord: 0.0ms | Allocations: 119238)
 
 
+Started GET "/" for 192.168.65.1 at 2023-12-15 07:21:02 +0000
+Started GET "/" for 192.168.65.1 at 2023-12-15 07:21:02 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 133)
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 1907.4ms | Allocations: 166402)
+Completed 200 OK in 2190ms (Views: 1976.4ms | ActiveRecord: 0.0ms | Allocations: 175710)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 1921.3ms | Allocations: 168146)
+Completed 200 OK in 2217ms (Views: 1984.4ms | ActiveRecord: 0.0ms | Allocations: 177459)
+
+
+Started GET "/" for 192.168.65.1 at 2023-12-15 07:21:16 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 2274)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 2505)
+
+
+Started GET "/" for 192.168.65.1 at 2023-12-15 07:33:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 351.7ms | Allocations: 38308)
+Completed 200 OK in 419ms (Views: 372.2ms | ActiveRecord: 0.0ms | Allocations: 44231)
+
+

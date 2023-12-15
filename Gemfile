@@ -25,6 +25,9 @@ gem 'rake'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
+gem 'timeout', '0.4.1'
+gem 'date', '3.3.4'
+gem 'stringio', '3.1.0'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
